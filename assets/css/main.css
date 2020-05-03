@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body,
+html {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+/********** 
+** GENERAL 
+***********/
+
+.btn-primary {
+    background-color: #EE5A42;
+    border-color: #EE5A42;
+    border-radius: 40px;
+    color: #FFF;
+    padding: 20px 40px;
+}
+
+    .btn-primary:hover {
+        background-color: #AC4130;
+        border-color: #AC4130;
+    }
+
+.btn-outline-primary {
+    border-color: #EE5A42;
+    border-radius: 30px;
+    color: #EE5A42;
+    padding: 10px 30px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #EE5A42;
+        border-color: #EE5A42;
+        color: #FFF;
+    }
+
+.btn-primary:focus, 
+.btn-outline-primary:focus {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+}
+
+/********** 
+** CAROUSEL 
+***********/
+
+.carousel {
+    margin-top: 75px;
+}
+
+/********** 
+** PRODUCTOS 
+***********/
+
+#productos {
+    margin-top: 50px;
+    text-align: center;
+}
+
+    #productos h1.title-section {
+        margin-bottom: 50px;
+    }
+
+    #productos .img-productos {
+        border-radius: 50%;
+        margin-bottom: 15px;
+        width: 200px;
+    }
+
+#primary-product .img-primary-product {
+    width: 100%;
+}
+
+/********** 
+** SERVICIOS 
+***********/
+
+#servicios {
+    text-align: center;
+}
+
+#servicios h1.title-section {
+    margin-bottom: 50px;
+}
+
+/********** 
+** CONTACTO 
+***********/
+
+#contacto {
+    margin: 50px 0;
+}
+
+#contacto iframe{
+    width: 100%;
+    height:100%;
+}
+
+#contacto form{
+    padding: 25px;
+}
+
+form textarea {
+    max-height: 400px;
+    min-height: 200px;
+}
+
+.form-control {
+    background: #F7F7F9;
+    border: none;
+    border-radius: 0;
+    padding: 25px 15px;
+}
+
+.form-control:focus {
+    color: #55595c;
+    background-color: #f7f7f9;
+    border-color: #5a5a5a;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(235, 104, 100, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(235, 104, 100, 0.25);
+}
+
+/********** 
+** FOOTER 
+***********/
+
+footer {
+    background: #EE5A42;
+    color: #fff;
+    padding: 25px 0;
+}
+
+footer p {
+    margin: 0px;
+}
+
+/********** 
+** FOOTER 
+***********/
+
+.modal-dialog {
+    max-width: 800px;
+}
+
+.modal-header {
+    border: none;
+    text-align: center;
+}
+
+.modal-body {
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body p {
+    text-align: left;
+}
+
+.modal-body img {
+    max-height: 450px;
+}
