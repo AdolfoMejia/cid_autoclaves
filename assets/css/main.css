@@ -8,6 +8,10 @@ html {
     padding: 0px;
 }
 
+.overflow {
+    overflow: hidden;
+}
+
 /********** 
 ** GENERAL 
 ***********/
@@ -154,8 +158,20 @@ footer p {
 }
 
 /********** 
-** FOOTER 
+** MODAL 
 ***********/
+#modal {
+    display: none;
+    background: rgba(212, 212, 212, 0.9);
+    top: 0;
+    left: 0;
+    height: 100%;
+    min-width: 320px;
+    overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
 
 .modal-dialog {
     max-width: 800px;
@@ -164,6 +180,19 @@ footer p {
 .modal-header {
     border: none;
     text-align: center;
+    justify-content: center;
+}
+
+.modal-header .close {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.modal-header .close:hover {
+    cursor: pointer;
+    opacity: .8;
 }
 
 .modal-body {

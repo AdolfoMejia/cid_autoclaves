@@ -27,11 +27,10 @@ class work {
             <p><?php echo $product->short_description ?></p>
             <button 
                 type="button"
-                class="btn btn-outline-primary productos"
+                class="btn btn-outline-primary modal-open"
                 data-name="<?php echo $product->name ?>"
-                data-type="productos"
-                data-toggle="modal"
-                data-target="#exampleModalLong">
+                data-type="products"
+                data-toggle="modal" data-target="#exampleModalLong">
                 Ver detalles »
             </button>
         </div>
@@ -49,35 +48,47 @@ class work {
         <div class="col-lg-4 mb-5">
             <h2><?php echo $service->name ?></h2>
             <p><?php echo $service->short_description ?></p>
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalLong">Ver detalles »</button>
+            <button 
+                type="button"
+                class="btn btn-outline-primary modal-open"
+                data-name="<?php echo $service->name ?>"
+                data-type="services">
+                Ver detalles »
+            </button>
         </div>
 
         <?php
         }
     }
 
-    public function modal(){
+    public function modal($name, $type){
+        $statement = conexion::con()->query("SELECT * FROM $type WHERE name = '$name'");
+        $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
+        foreach ($data_bd as $data) {
         ?>
+        <script>
+            $('button.close').click(function(){
+                $('body').removeClass('overflow');
+                $("#modal").fadeOut("fast");
+            });
+        </script>
 
-        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLongTitle">Nombre del producto</h2>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">X</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img class="img-productos" src="assets/img/productos/autoclave.jpg" alt="">
-                        <p></p>
-                    </div>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"><?php echo $data->name ?></h2>
+                    <button type="button" class="close">X
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-productos" src="assets/img/productos/autoclave.jpg" alt="">
+                    <p><?php echo $data->long_description ?></p>
                 </div>
             </div>
         </div>
 
         <?php
-        
+        }
     }
 }
 ?>

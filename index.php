@@ -1,10 +1,12 @@
 <?php 
 require_once('./assets/class/class.php');
 
-if(isset($_POST['action']) and $_POST['action'] =='modal' ){
-    $a = new work();
-    $a->modal($_POST['name'], $_POST['type']);
-}
+if (isset($_POST["action"]) and $_POST["action"] == 'modal')
+{
+    $t = new work();
+    $t -> modal($_POST["name"], $_POST["type"]);
+    exit;
+}else{}
 ?>
 
 <!DOCTYPE html>
