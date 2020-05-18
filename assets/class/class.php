@@ -22,7 +22,7 @@ class work {
         ?>
 
         <div class="col-lg-4 mb-5">
-            <img class="img-productos" src="assets/img/productos/<?php echo $product->image ?>" alt="">
+            <img class="img-productos" src="assets/img/productos/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
             <h2><?php echo $product->name ?></h2>
             <p><?php echo $product->short_description ?></p>
             <button 
@@ -64,31 +64,48 @@ class work {
     public function modal($name, $type){
         $statement = conexion::con()->query("SELECT * FROM $type WHERE name = '$name'");
         $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
-        foreach ($data_bd as $data) {
-        ?>
+    ?>
+
         <script>
-            $('button.close').click(function(){
+            $('button.close, button.btn-close-modal').click(function(){
                 $('body').removeClass('overflow');
                 $("#modal").fadeOut("fast");
             });
         </script>
+        
+        <div class="container">
 
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title"><?php echo $data->name ?></h2>
-                    <button type="button" class="close">X
-                    </button>
+            <?php
+            foreach ($data_bd as $data) {
+            ?>
+            
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <button type="button" class="close"><img src="./assets/img/close.png" alt="close"></button>
+
+                        <div class="col-lg-5 image-card">
+                            <img src="./assets/img/productos/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body">
+                                <h1 class="card-title"><?php echo $data->name ?></h1>
+
+                                <p class="card-text"><?php echo $data->short_description ?></p>
+                                <p class="card-text"><?php echo $data->long_description ?></p>
+
+                                <button type="button" class="btn btn-outline-primary btn-close-modal mx-auto">Volver...</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <img class="img-productos" src="assets/img/productos/autoclave.jpg" alt="">
-                    <p><?php echo $data->long_description ?></p>
-                </div>
-            </div>
+
+            <?php 
+            }
+            ?>
+
         </div>
-
-        <?php
-        }
+    <?php
     }
 }
 ?>

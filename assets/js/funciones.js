@@ -19,12 +19,12 @@ $(document).ready(function(){
             type: "POST",
 			url: "index.php",
             data: datosEnvio,
-			success: datosAjaxCorreo,
+			success: ajaxResponse,
         });
 		return false;
     });
 
-    function datosAjaxCorreo(datos){
+    function ajaxResponse(datos){
         $('body').addClass('overflow');
         $('#modal').fadeIn("fast").html(datos);
     }
