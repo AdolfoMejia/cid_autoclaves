@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
 
     $('button.modal-open').click(function(){
-        var action = "modal";
+        var action = $(this).attr('data-modal-type');
         var name = $(this).attr('data-name');
         var type = $(this).attr('data-type');
 

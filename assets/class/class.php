@@ -30,7 +30,7 @@ class work {
                 class="btn btn-outline-primary modal-open"
                 data-name="<?php echo $product->name ?>"
                 data-type="products"
-                data-toggle="modal" data-target="#exampleModalLong">
+                data-modal-type="modal">
                 Ver detalles »
             </button>
         </div>
@@ -52,7 +52,8 @@ class work {
                 type="button"
                 class="btn btn-outline-primary modal-open"
                 data-name="<?php echo $service->name ?>"
-                data-type="services">
+                data-type="services"
+                data-modal-type="modal">
                 Ver detalles »
             </button>
         </div>
@@ -94,7 +95,60 @@ class work {
                                 <p class="card-text"><?php echo $data->short_description ?></p>
                                 <p class="card-text"><?php echo $data->long_description ?></p>
 
-                                <button type="button" class="btn btn-outline-primary btn-close-modal mx-auto">Volver...</button>
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary btn-close-modal mx-auto">
+                                    Volver al sitio »
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php 
+            }
+            ?>
+
+        </div>
+    <?php
+    }
+
+    public function modalAll($type){
+        $statement = conexion::con()->query("SELECT * FROM $type");
+        $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
+    ?>
+
+        <script>
+            $('button.close, button.btn-close-modal').click(function(){
+                $('body').removeClass('overflow');
+                $("#modal").fadeOut("fast");
+            });
+        </script>
+        
+        <div class="container">
+
+            <?php
+            foreach ($data_bd as $data) {
+            ?>
+            
+                <div class="card mb-5">
+                    <div class="row no-gutters">
+                        <div class="col-lg-5 image-card">
+                            <img src="./assets/img/productos/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="card-body">
+                                <h1 class="card-title"><?php echo $data->name ?></h1>
+
+                                <p class="card-text"><?php echo $data->short_description ?></p>
+                                <p class="card-text"><?php echo $data->long_description ?></p>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary btn-close-modal mx-auto">
+                                    Volver al sitio »
+                                </button>
                             </div>
                         </div>
                     </div>

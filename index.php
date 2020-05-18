@@ -7,6 +7,13 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal')
     $t -> modal($_POST["name"], $_POST["type"]);
     exit;
 }else{}
+
+if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
+{
+    $t = new work();
+    $t -> modalAll($_POST["type"]);
+    exit;
+}else{}
 ?>
 
 <!DOCTYPE html>
@@ -122,9 +129,9 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal')
         <div class="row">
             <button
                 type="button"
-                class="btn btn-primary btn-lg mx-auto"
-                data-name="all"
-                data-type="products">
+                class="btn btn-primary btn-lg mx-auto modal-open"
+                data-type="products"
+                data-modal-type="modal-all">
                 Ver mas productos...
             </button>
         </div>
@@ -167,7 +174,13 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal')
         </div>
 
         <div class="row">
-            <button type="button" class="btn btn-primary btn-lg mx-auto">Ver mas servicios...</button>
+            <button
+                type="button"
+                class="btn btn-primary btn-lg mx-auto modal-open"
+                data-type="services"
+                data-modal-type="modal-all">
+                Ver mas servicios...
+            </button>
         </div>
     </div>
 

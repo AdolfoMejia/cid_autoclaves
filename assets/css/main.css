@@ -162,7 +162,7 @@ footer p {
 ***********/
 #modal {
     display: none;
-    background: rgba(212, 212, 212, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     top: 0;
     left: 0;
     height: 100%;
@@ -176,7 +176,9 @@ footer p {
 #modal .container {
     align-items: center;
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 60px;
 }
 
 @media (max-width: 768px) {
