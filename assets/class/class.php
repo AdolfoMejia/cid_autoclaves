@@ -22,7 +22,7 @@ class work {
         ?>
 
         <div class="col-lg-4 mb-5">
-            <img class="img-productos" src="assets/img/productos/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
+            <img class="img-productos" src="assets/img/products/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
             <h2><?php echo $product->name ?></h2>
             <p><?php echo $product->short_description ?></p>
             <button 
@@ -46,6 +46,7 @@ class work {
         ?>
 
         <div class="col-lg-4 mb-5">
+            <img class="img-productos" src="assets/img/services/<?php echo $service->image ?>" alt="<?php echo $service->name ?>">
             <h2><?php echo $service->name ?></h2>
             <p><?php echo $service->short_description ?></p>
             <button 
@@ -85,7 +86,7 @@ class work {
                         <button type="button" class="close"><img src="./assets/img/close.png" alt="close"></button>
 
                         <div class="col-lg-5 image-card">
-                            <img src="./assets/img/productos/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                            <img src="./assets/img/<?php echo $type ?>/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
                         </div>
 
                         <div class="col-lg-7">
@@ -134,7 +135,7 @@ class work {
                 <div class="card mb-5">
                     <div class="row no-gutters">
                         <div class="col-lg-5 image-card">
-                            <img src="./assets/img/productos/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                            <img src="./assets/img/<?php echo $type ?>/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
                         </div>
 
                         <div class="col-lg-7">

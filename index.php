@@ -153,7 +153,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
                 </ul>
             </div>
             <div class="col-md-5">
-                <img class="img-primary-product" src="assets/img/productos/producto-primary.jpg" alt="">
+                <img class="img-primary-product" src="assets/img/products/producto-primary.jpg" alt="">
             </div>
         </div>
         

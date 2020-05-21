@@ -16,7 +16,7 @@ require_once('./class/class.php');
             <div class="container mt-5">
                 <div class="row">
                     <a
-                        href="#"
+                        href="add-service.php"
                         class="btn btn-primary btn-lg mx-auto modal-open">
                         Agregar nuevo Servicio »
                     </a>

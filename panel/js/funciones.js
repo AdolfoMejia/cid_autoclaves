@@ -4,7 +4,7 @@ $(document).ready(function(){
         var formData = new FormData(this);
 		$.ajax({
             type: "POST",
-			url: "add-product.php",
+			url: $(this).attr("action"),
             data: formData,
             contentType: false,
             cache: false,

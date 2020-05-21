@@ -105,6 +105,12 @@ html {
     margin-bottom: 50px;
 }
 
+#servicios .img-productos {
+    margin-bottom: 15px;
+    max-width: 225px;
+    max-height: 225px;
+}
+
 /********** 
 ** CONTACTO 
 ***********/
@@ -186,6 +192,10 @@ footer p {
         height: fit-content;
         padding: 25px 25px 10px 10px;
     }
+}
+
+#modal .card {
+    width: 100%;
 }
 
 #modal .image-card {

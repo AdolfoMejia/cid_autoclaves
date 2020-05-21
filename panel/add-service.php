@@ -28,8 +28,8 @@ if (isset($_POST['add'])) {
     <div id="add" class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="add-form" action="add-product.php" method="POST" enctype="multipart/form-data">
-                    <h2>Agregar producto</h2>
+                <form id="add-form" action="add-service.php" method="POST" enctype="multipart/form-data">
+                    <h2>Agregar servicio</h2>
                     <div class="form-group">
                         <label for="Nombre">Nombre:</label>
                         <input type="text" name="name" class="form-control" required>
@@ -51,7 +51,7 @@ if (isset($_POST['add'])) {
                     </div>
 
                     <input type="hidden" name="add">
-                    <input type="hidden" name="type" value="products">
+                    <input type="hidden" name="type" value="services">
 
                     <input type="submit" class="btn btn-success btn-lg submitBtn" value="Guardar"/>
                 </form>

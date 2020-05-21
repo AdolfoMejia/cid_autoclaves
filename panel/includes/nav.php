@@ -13,7 +13,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="sliders.php">Ver Sliders</a>
-                    <a class="dropdown-item" href="#">Agregar nuevo slider</a>
+                    <a class="dropdown-item" href="add-slider.php">Agregar nuevo slider</a>
                 </div>
             </li>
 
@@ -23,7 +23,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="products.php">Ver Productos</a>
-                    <a class="dropdown-item" href="#">Agregar nuevo producto</a>
+                    <a class="dropdown-item" href="add-product.php">Agregar nuevo producto</a>
                 </div>
             </li>
 
@@ -33,7 +33,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="services.php">Ver servicios</a>
-                    <a class="dropdown-item" href="#">Agregar nuevo servicio</a>
+                    <a class="dropdown-item" href="add-service.php">Agregar nuevo servicio</a>
                 </div>
             </li>
         </ul>
