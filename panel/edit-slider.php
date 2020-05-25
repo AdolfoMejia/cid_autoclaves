@@ -10,6 +10,11 @@
 <?php
 require_once('./class/class.php');
 
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit;
+}
+
 if (isset($_POST['update'])) {
     $a = new work();
     $a->edit_slider(

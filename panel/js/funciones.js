@@ -12,7 +12,7 @@ $(document).ready(function(){
         ]
     });
 
-    $('#add-form').submit(function(e){
+    $('#add-form, #login-form').submit(function(e){
         e.preventDefault();
         var formData = new FormData(this);
 		$.ajax({
@@ -28,7 +28,7 @@ $(document).ready(function(){
     });
 
     function ajaxResponse(datos){
-        $("#add-form")[0].reset();
+        $("#add-form, #login-form")[0].reset();
         $('#summernote').html(' ');
         $('#responser').fadeIn("medium").html(datos);
     }

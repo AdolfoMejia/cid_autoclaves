@@ -129,19 +129,10 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
     <!-- Producto principal -->
     <div id="primary-product" class="container ">
         <div class="row align-items-center">
-            <div class="col-md-7">
-                <h1>Nombre autoclave</h1>
-                <h4 class="text-muted">Informacion sobre el producto principal para que las personas sepan que es</h4>
-                <ul>
-                    <li>Caracteristica 1</li>
-                    <li>Caracteristica 2</li>
-                    <li>Caracteristica 3</li>
-                    <li>Caracteristica 4</li>
-                </ul>
-            </div>
-            <div class="col-md-5">
-                <img class="img-primary-product" src="assets/img/products/producto-primary.jpg" alt="">
-            </div>
+            <?php 
+                $a = new work();
+                $a->primary_product();
+            ?>
         </div>
         
         <hr class="my-5">

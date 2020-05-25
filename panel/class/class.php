@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 class conexion {
     public static function con(){
         $password = "";
@@ -14,6 +16,57 @@ class conexion {
 }
 
 class work {
+
+    public function login($user, $password){
+        $stmt = conexion::con()->prepare("SELECT id, password FROM users WHERE user = ?");
+        $stmt->execute([$user]);
+        $data = $stmt->fetchAll();
+
+        if($data) {
+            foreach($data as $row) {
+                $id = $row['id'];
+                $password_res = $row['password'];
+
+                if ($password === $password_res) {
+                    // Verification success! User has loggedin!
+                    // Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
+                    session_regenerate_id();
+                    $_SESSION['loggedin'] = TRUE;
+                    $_SESSION['name'] = $user;
+                    $_SESSION['id'] = $id;
+    
+                    ?>
+    
+                        <div class="alert alert-success" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong>Todo salio bien!</strong> Bienvenido <?php echo $_SESSION['name'] ?>
+                        </div>
+                        <meta http-equiv="refresh" content="4; url=index.php">
+                    <?php
+
+                } else {
+                ?>
+    
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>Algo salio mal!</strong> La contraseña es incorrecta
+                    </div>
+    
+                <?php
+                }
+            }
+        } else {
+        ?>
+
+            <div class="alert alert-danger" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Algo salio mal!</strong> No se encontro el usuario
+            </div>
+
+        <?php
+        }
+    }
+
 	public function list($type){
         $statement = conexion::con()->query("SELECT * FROM $type");
         $products = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -86,15 +139,25 @@ class work {
                         class="btn btn-lg btn-info">
                         Editar »
                     </a>
+                    
+                    <?php 
+                    if ($type == "primary_product") {
+                        //No hacer nada
+                    } else {
+                    ?>
 
-                    <a
-                        href="<?php echo $type ?>.php"
-                        class="btn btn-lg btn-outline-danger ml-3 delete"
-                        data-id="<?php echo $product->id ?>"
-                        data-type="sliders"
-                        data-modal-type="delete">
-                        Eliminar »
-                    </a>
+                        <a
+                            href="<?php echo $type ?>.php"
+                            class="btn btn-lg btn-outline-danger ml-3 delete"
+                            data-id="<?php echo $product->id ?>"
+                            data-type="sliders"
+                            data-modal-type="delete">
+                            Eliminar »
+                        </a>
+
+                    <?php 
+                    }
+                    ?>
                 </div>
             </div>
             

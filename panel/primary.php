@@ -37,17 +37,10 @@ if (isset($_POST['action']) && $_POST['action'] == "delete") {
     <div class="container">
         <div id="page-content-wrapper">
             <div class="container mt-5">
-                <div class="row">
-                    <a
-                        href="add-slider.php"
-                        class="btn btn-success btn-lg mx-auto modal-open">
-                        Agregar nuevo Slider »
-                    </a>
-                </div>
                 <div class="row mt-5">
                     <?php 
                         $a = new work();
-                        $a->list_sliders("sliders");
+                        $a->list_sliders("primary_product");
                     ?>
                 </div>
             </div>

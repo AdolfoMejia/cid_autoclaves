@@ -9,6 +9,11 @@
 <?php
 require_once('./class/class.php');
 
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit;
+}
+
 if (isset($_POST['add'])) {
     $a = new work();
     $a->add_slider($_POST["type"], $_POST["title"], $_POST["description"]);

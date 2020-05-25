@@ -10,6 +10,11 @@
 <?php 
 require_once('./class/class.php');
 
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: login.php');
+	exit;
+}
+
 if (isset($_POST['action']) && $_POST['action'] == "delete") {
     $a = new work();
     $a->delete(

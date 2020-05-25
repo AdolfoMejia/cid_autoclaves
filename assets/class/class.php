@@ -41,6 +41,25 @@ class work {
         }
     }
 
+    public function primary_product(){
+        $statement = conexion::con()->query("SELECT * FROM primary_product");
+        $primary = $statement->fetchAll(PDO::FETCH_OBJ);
+        foreach ($primary as $primary_product) {
+        ?>
+
+            <div class="col-md-7">
+                <h1><?php echo $primary_product->title ?></h1>
+                <?php echo $primary_product->description ?>
+            </div>
+
+            <div class="col-md-5">
+                <img class="img-primary-product" src="assets/img/primary_product/<?php echo $primary_product->image ?>" alt="<?php echo $primary_product->title ?>">
+            </div>
+
+        <?php
+        }
+    }
+
     public function services(){
         $statement = conexion::con()->query("SELECT * FROM services ORDER BY RAND() LIMIT 3");
         $services = $statement->fetchAll(PDO::FETCH_OBJ);
