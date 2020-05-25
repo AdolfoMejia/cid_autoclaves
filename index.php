@@ -26,8 +26,6 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/main.css">
 
@@ -77,53 +75,10 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
         <!-- Carousel -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="carousel-caption col-md-7">
-                                <h1>Example headline.</h1>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                            </div>
-
-                            <div class="col-md-5">
-                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="carousel-caption col-md-7">
-                                <h1>Example headline.</h1>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                            </div>
-
-                            <div class="col-md-5">
-                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <div class="container">
-                        <div class="row d-flex justify-content-center align-items-center">
-                            <div class="carousel-caption col-md-7">
-                                <h1>Example headline.</h1>
-                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
-                            </div>
-
-                            <div class="col-md-5">
-                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php 
+                    $a = new work();
+                    $a->sliders();
+                ?>
             </div>
 
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">

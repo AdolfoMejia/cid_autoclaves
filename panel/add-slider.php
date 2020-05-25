@@ -37,9 +37,9 @@ if (isset($_POST['add'])) {
 
                     <div class="form-group">
                         <label for="Description">Descripcion:</label>
-                        <textarea name="description" class="form-control" rows="5" required></textarea>
+                        <textarea id="summernote" name="description" class="form-control" required></textarea>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="Image">Imagen:</label>
                         <input type="file" name="archivo" id="archivo" class="ml-2" required>

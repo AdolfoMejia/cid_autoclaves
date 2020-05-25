@@ -1,4 +1,17 @@
 $(document).ready(function(){
+    $('#summernote').summernote({
+        placeholder: 'Inserta tu contenido aqui, tal como lo escribes se vera en el sitio web',
+        tabsize: 2,
+        height: 250,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+            ['misc', ['undo', 'redo']],
+        ]
+    });
+
     $('#add-form').submit(function(e){
         e.preventDefault();
         var formData = new FormData(this);
@@ -16,6 +29,7 @@ $(document).ready(function(){
 
     function ajaxResponse(datos){
         $("#add-form")[0].reset();
+        $('#summernote').html(' ');
         $('#responser').fadeIn("medium").html(datos);
     }
 

@@ -35,7 +35,7 @@ if (isset($_POST['action']) && $_POST['action'] == "delete") {
                 <div class="row">
                     <a
                         href="add-slider.php"
-                        class="btn btn-primary btn-lg mx-auto modal-open">
+                        class="btn btn-success btn-lg mx-auto modal-open">
                         Agregar nuevo Slider »
                     </a>
                 </div>

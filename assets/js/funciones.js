@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $( $('.carousel-item')[0] ).addClass('active');
+
     //movimiento del menu
     $('a.smooth').click(function(e){
         e.preventDefault();

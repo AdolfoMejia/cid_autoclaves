@@ -32,7 +32,7 @@ class work {
                             <h1 class="card-title"><?php echo $product->name ?></h1>
 
                             <p class="card-text"><?php echo $product->short_description ?></p>
-                            <p class="card-text"><?php echo $product->long_description ?></p>
+                            <?php echo $product->long_description ?>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ class work {
                 <div class="row justify-content-center p-3">
                     <a
                         href="edit.php?id=<?php echo $product->id ?>&type=<?php echo $type ?>"
-                        class="btn btn-lg btn-outline-primary">
+                        class="btn btn-lg btn-info">
                         Editar »
                     </a>
 
@@ -71,7 +71,7 @@ class work {
                     <div class="col-lg-7">
                         <div class="card-body">
                             <h1><?php echo $product->title ?></h1>
-                            <h4 class=""><?php echo $product->description ?></h4>
+                            <?php echo $product->description ?>
                         </div>
                     </div>
                     
@@ -83,7 +83,7 @@ class work {
                 <div class="row justify-content-center p-3">
                     <a
                         href="edit-slider.php?id=<?php echo $product->id ?>&type=<?php echo $type ?>"
-                        class="btn btn-lg btn-outline-primary">
+                        class="btn btn-lg btn-info">
                         Editar »
                     </a>
 
@@ -280,6 +280,29 @@ class work {
                 <?php
                 }
             }
+        } else {
+            $sentencia = conexion::con()->prepare("UPDATE $type SET name = ?, short_description = ?, long_description = ? WHERE id = ?");
+            $resultado = $sentencia->execute([$name, $short, $long, $id]);
+            
+            if($resultado === TRUE) {
+            ?>
+
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Todo salio bien!</strong> Se guardo toda la informacion enviada
+                </div>
+
+            <?php 
+            } else {
+            ?>
+
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Algo salio mal!</strong> No se guardo la informacion en la Base de datos
+                </div>
+
+            <?php
+            }
         }
     }
 
@@ -329,6 +352,29 @@ class work {
                 
                 <?php
                 }
+            }
+        } else {
+            $sentencia = conexion::con()->prepare("UPDATE $type SET title = ?, description = ? WHERE id = ?");
+            $resultado = $sentencia->execute([$title, $description, $id]);
+            
+            if($resultado === TRUE) {
+            ?>
+
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Todo salio bien!</strong> Se guardo toda la informacion enviada
+                </div>
+
+            <?php 
+            } else {
+            ?>
+
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong>Algo salio mal!</strong> No se guardo la informacion en la Base de datos
+                </div>
+
+            <?php
             }
         }
     }

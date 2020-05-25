@@ -42,7 +42,7 @@ if (isset($_POST['add'])) {
 
                     <div class="form-group">
                         <label for="Long description">Descripcion larga:</label>
-                        <textarea name="long_description" class="form-control" rows="5" required></textarea>
+                        <textarea id="summernote" name="long_description" class="form-control" rows="5" required></textarea>
                     </div>
 
                     <div class="form-group">

@@ -78,15 +78,17 @@ h1.title-section {
 }
 
 /********** 
+** HEADER 
+***********/
+
+
+
+/********** 
 ** CAROUSEL 
 ***********/
 
 #myCarousel {
     margin-top: 100px;
-}
-
-.carousel-inner{
-    height: 100%;
 }
 
 .carousel-caption {
@@ -97,9 +99,20 @@ h1.title-section {
     text-align: left;
 }
 
-img.img-primary-product {
-    height: 100%;
-    width: 100%;
+#myCarousel .image-card {
+    text-align: center;
+}
+
+/* Set width to make card deck cards 100% width */
+@media (max-width: 992px) { 
+    #myCarousel .image-card {
+        display: none;
+    }
+}
+
+#myCarousel .image-card img {
+    max-height: 550px;
+    max-width: 100%;
 }
 
 .carousel-control-prev-icon {

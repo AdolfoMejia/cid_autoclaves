@@ -67,6 +67,31 @@ class work {
         }
     }
 
+    public function sliders(){
+        $statement = conexion::con()->query("SELECT * FROM sliders");
+        $sliders = $statement->fetchAll(PDO::FETCH_OBJ);
+        foreach ($sliders as $slider) {
+        ?>
+
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row no-gutters d-flex justify-content-center align-items-center">
+                    <div class="carousel-caption col">
+                        <h1><?php echo $slider->title ?></h1>
+                        <?php echo $slider->description ?>
+                    </div>
+
+                    <div class="col-5 image-card" >
+                        <img src="assets/img/sliders/<?php echo $slider->image ?>" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+        }
+    }
+
     public function modal($name, $type){
         $statement = conexion::con()->query("SELECT * FROM $type WHERE name = '$name'");
         $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -98,7 +123,7 @@ class work {
                                 <h1 class="card-title"><?php echo $data->name ?></h1>
 
                                 <p class="card-text"><?php echo $data->short_description ?></p>
-                                <p class="card-text"><?php echo $data->long_description ?></p>
+                                <?php echo $data->long_description ?>
 
                                 <button
                                     type="button"
@@ -147,7 +172,7 @@ class work {
                                 <h1 class="card-title"><?php echo $data->name ?></h1>
 
                                 <p class="card-text"><?php echo $data->short_description ?></p>
-                                <p class="card-text"><?php echo $data->long_description ?></p>
+                                <?php echo $data->long_description ?>
 
                                 <button
                                     type="button"

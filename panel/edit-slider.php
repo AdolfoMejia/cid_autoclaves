@@ -53,14 +53,14 @@ $image = $datos->image;
                     </div>
 
                     <div class="form-group">
-                        <label for="Description">Descripcion corta:</label>
-                        <textarea name="description" class="form-control" rows="5" required><?php echo $description; ?></textarea>
+                        <label for="Description">Descripcion:</label>
+                        <textarea id="summernote" name="description" class="form-control" rows="5" required><?php echo $description; ?></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="Image">Imagen actual:</label>
                         <img src="../assets/img/<?php echo $type ?>/<?php echo $image ?>" width="150px" alt="<?php echo $image ?>">
-                        <input type="file" name="archivo" id="archivo" class="ml-2" required>
+                        <input type="file" name="archivo" id="archivo" class="ml-2">
                     </div>
 
                     <input type="hidden" name="update">

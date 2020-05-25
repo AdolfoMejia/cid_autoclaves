@@ -1,3 +1,38 @@
+.btn-primary {
+    background-color: #EE5A42;
+    border-color: #EE5A42;
+    border-radius: 0px;
+    color: #FFF;
+    padding: 20px 40px;
+}
+
+    .btn-primary:hover {
+        background-color: #AC4130;
+        border-color: #AC4130;
+    }
+
+.btn-outline-primary {
+    border-color: #EE5A42;
+    border-radius: 30px;
+    color: #EE5A42;
+    padding: 10px 30px;
+}
+
+    .btn-outline-primary:hover {
+        background-color: #EE5A42;
+        border-color: #EE5A42;
+        color: #FFF;
+    }
+
+    .btn-primary:focus, 
+    .btn-outline-primary:focus {
+        color: #fff;
+        background-color: #000;
+        border-color: #000;
+        -webkit-box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+        box-shadow: 0 0 0 0.2rem rgba(60, 60, 60, 0.5);
+    }
+
 #add {
     margin-bottom: 30px;
     margin-top: 30px;
