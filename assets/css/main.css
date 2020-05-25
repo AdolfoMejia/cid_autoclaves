@@ -81,7 +81,14 @@ h1.title-section {
 ** HEADER 
 ***********/
 
+.contact-banner {
+    background-color: #EE5A42;
+    color: #FFF;
+}
 
+    .contact-banner p {
+        margin-bottom: 0;
+    }
 
 /********** 
 ** CAROUSEL 

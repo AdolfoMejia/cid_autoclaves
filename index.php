@@ -41,8 +41,15 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
     <!-- Modal -->
     <div id="modal"></div>
 
+    <!-- Banner contact -->
+    <div class="fixed-top text-center contact-banner">
+        <div class="container">
+            <p>Contactanos al numero <strong>(123) 4567- 890</strong></p>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mt-4">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="http://placehold.it/150x50?text=Logo" alt="">
@@ -70,9 +77,9 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
             </div>
         </div>
     </nav>
-
+    
+    <!-- Carousel -->
     <div id="inicio">
-        <!-- Carousel -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <?php 
