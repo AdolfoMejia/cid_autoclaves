@@ -34,15 +34,15 @@ if (isset($_POST['action']) && $_POST['action'] == "delete") {
             <div class="container mt-5">
                 <div class="row">
                     <a
-                        href="add-service.php"
+                        href="add-slider.php"
                         class="btn btn-primary btn-lg mx-auto modal-open">
-                        Agregar nuevo Servicio »
+                        Agregar nuevo Slider »
                     </a>
                 </div>
                 <div class="row mt-5">
                     <?php 
                         $a = new work();
-                        $a->list("services");
+                        $a->list_sliders("sliders");
                     ?>
                 </div>
             </div>

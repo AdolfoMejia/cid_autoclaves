@@ -1,5 +1,23 @@
+<script>
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+            location.reload();
+        });
+    }, 4000);
+</script>
+
 <?php 
 require_once('./class/class.php');
+
+if (isset($_POST['action']) && $_POST['action'] == "delete") {
+    $a = new work();
+    $a->delete(
+        $_POST["id"], 
+        $_POST["type"]
+    );
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +47,9 @@ require_once('./class/class.php');
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="messageAlert">
     </div>
 </body>
 </html>

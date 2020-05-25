@@ -22,7 +22,9 @@ class work {
         ?>
 
         <div class="col-lg-4 mb-5">
-            <img class="img-productos" src="assets/img/products/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
+            <div class="img-container mx-auto d-flex justify-content-center align-items-center">
+                <img class="img-productos" src="assets/img/products/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
+            </div>
             <h2><?php echo $product->name ?></h2>
             <p><?php echo $product->short_description ?></p>
             <button 
@@ -46,7 +48,9 @@ class work {
         ?>
 
         <div class="col-lg-4 mb-5">
-            <img class="img-productos" src="assets/img/services/<?php echo $service->image ?>" alt="<?php echo $service->name ?>">
+            <div class="img-container mx-auto d-flex justify-content-center align-items-center">
+                <img class="img-productos" src="assets/img/services/<?php echo $service->image ?>" alt="<?php echo $service->name ?>">
+            </div>
             <h2><?php echo $service->name ?></h2>
             <p><?php echo $service->short_description ?></p>
             <button 

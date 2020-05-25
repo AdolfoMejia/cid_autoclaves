@@ -12,12 +12,11 @@ require_once('./class/class.php');
 
 if (isset($_POST['update'])) {
     $a = new work();
-    $a->edit(
+    $a->edit_slider(
         $_POST["id"], 
         $_POST["type"], 
-        $_POST["name"], 
-        $_POST["short_description"], 
-        $_POST["long_description"]
+        $_POST["title"], 
+        $_POST["description"]
     );
     exit;
 }
@@ -28,9 +27,8 @@ $type = $_GET['type'];
 $statement = conexion::con()->query("SELECT * FROM $type WHERE id = $id");
 $datos = $statement->fetch(PDO::FETCH_OBJ);
 
-$name = $datos->name;
-$short_description = $datos->short_description;
-$long_description = $datos->long_description;
+$title = $datos->title;
+$description = $datos->description;
 $image = $datos->image;
 
 ?>
@@ -47,21 +45,16 @@ $image = $datos->image;
     <div id="add" class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="add-form" action="edit.php" method="POST" enctype="multipart/form-data">
+                <form id="add-form" action="edit-slider.php" method="POST" enctype="multipart/form-data">
                     <h2>Editar</h2>
                     <div class="form-group">
-                        <label for="Nombre">Nombre:</label>
-                        <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" required>
+                        <label for="Title">Nombre:</label>
+                        <input type="text" name="title" class="form-control" value="<?php echo $title; ?>" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="Short description">Descripcion corta:</label>
-                        <textarea name="short_description" class="form-control" rows="5" required><?php echo $short_description; ?></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="Long description">Descripcion larga:</label>
-                        <textarea name="long_description" class="form-control" rows="5" required><?php echo $long_description; ?></textarea>
+                        <label for="Description">Descripcion corta:</label>
+                        <textarea name="description" class="form-control" rows="5" required><?php echo $description; ?></textarea>
                     </div>
 
                     <div class="form-group">

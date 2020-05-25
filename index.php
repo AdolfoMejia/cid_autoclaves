@@ -75,40 +75,65 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
 
     <div id="inicio">
         <!-- Carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            </ol>
-
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/img/carousel_bg/bg-1.jpg" class="d-block w-100" alt="">
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="assets/img/carousel_bg/bg-2.jpg" class="d-block w-100" alt="">
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="assets/img/carousel_bg/bg-3.jpg" class="d-block w-100" alt="">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="carousel-caption col-md-7">
+                                <h1>Example headline.</h1>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                            </div>
+
+                            <div class="col-md-5">
+                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="carousel-item">
-                    <img src="assets/img/carousel_bg/bg-2.jpg" class="d-block w-100" alt="">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="carousel-caption col-md-7">
+                                <h1>Example headline.</h1>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                            </div>
+
+                            <div class="col-md-5">
+                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row d-flex justify-content-center align-items-center">
+                            <div class="carousel-caption col-md-7">
+                                <h1>Example headline.</h1>
+                                <h4>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</h4>
+                            </div>
+
+                            <div class="col-md-5">
+                                <img class="img-primary-product" src="./assets/img/products/productos.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
+                <span class="sr-only">Previous</span>
             </a>
 
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
     </div>

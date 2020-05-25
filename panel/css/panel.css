@@ -19,3 +19,12 @@
 .card {
     width: 100%;
 }
+
+#messageAlert {
+    bottom: 0;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    position: fixed;
+    right: 0;
+    width: 20%;
+}
