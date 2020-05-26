@@ -30,7 +30,6 @@ class work {
                 if ($password === $password_res) {
                     // Verification success! User has loggedin!
                     // Create sessions so we know the user is logged in, they basically act like cookies but remember the data on the server.
-                    session_regenerate_id();
                     $_SESSION['loggedin'] = TRUE;
                     $_SESSION['name'] = $user;
                     $_SESSION['id'] = $id;

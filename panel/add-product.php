@@ -1,3 +1,7 @@
+<?php
+require_once('./class/class.php');
+?>
+
 <script>
     window.setTimeout(function() {
         $(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -7,8 +11,6 @@
 </script>
 
 <?php
-require_once('./class/class.php');
-
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: login.php');
 	exit;
