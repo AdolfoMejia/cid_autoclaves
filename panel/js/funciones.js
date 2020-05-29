@@ -29,7 +29,7 @@ $(document).ready(function(){
 
     function ajaxResponse(datos){
         $("#add-form, #login-form")[0].reset();
-        $('#summernote').html(' ');
+        $('#summernote').summernote('reset');
         $('#responser').fadeIn("medium").html(datos);
     }
 

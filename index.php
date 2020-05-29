@@ -52,7 +52,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mt-4">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="http://placehold.it/150x50?text=Logo" alt="">
+                <img id="logo" src="./assets/img/logo.png" alt="cid autoclaves">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -204,7 +204,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
             <div class="d-flex justify-content-between align-items-center">
                 <p>© 2020 Nombre de la empresa.</p>
                 <div>
-                    <img src="http://placehold.it/150x50?text=Logo" alt="">
+                    <img src="./assets/img/logo.png" alt="cid autoclaves">
                 </div> 
             </div>
         </div>

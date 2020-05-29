@@ -90,12 +90,36 @@ h1.title-section {
         margin-bottom: 0;
     }
 
+.navbar{
+    padding: 0px;
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        padding: 0px 25px;
+    }
+}
+
+#logo {
+    max-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.logo_small {
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
 /********** 
 ** CAROUSEL 
 ***********/
 
 #myCarousel {
-    margin-top: 100px;
+    margin-top: 150px;
+}
+
+.carousel-item {
+    padding: 0px 30px;
 }
 
 .carousel-caption {
@@ -196,11 +220,15 @@ form textarea {
 footer {
     background: #EE5A42;
     color: #fff;
-    padding: 25px 0;
+    padding: 5px 0;
 }
 
 footer p {
     margin: 0px;
+}
+
+footer img {
+    height: 125px;
 }
 
 /********** 

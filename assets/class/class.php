@@ -25,7 +25,7 @@ class work {
             <div class="img-container mx-auto d-flex justify-content-center align-items-center">
                 <img class="img-productos" src="assets/img/products/<?php echo $product->image ?>" alt="<?php echo $product->name ?>">
             </div>
-            <h2><?php echo $product->name ?></h2>
+            <h3><?php echo $product->name ?></h3>
             <p><?php echo $product->short_description ?></p>
             <button 
                 type="button"
@@ -70,7 +70,7 @@ class work {
             <div class="img-container mx-auto d-flex justify-content-center align-items-center">
                 <img class="img-productos" src="assets/img/services/<?php echo $service->image ?>" alt="<?php echo $service->name ?>">
             </div>
-            <h2><?php echo $service->name ?></h2>
+            <h3><?php echo $service->name ?></h3>
             <p><?php echo $service->short_description ?></p>
             <button 
                 type="button"
@@ -96,7 +96,7 @@ class work {
             <div class="container">
                 <div class="row no-gutters d-flex justify-content-center align-items-center">
                     <div class="carousel-caption col">
-                        <h1><?php echo $slider->title ?></h1>
+                        <h2><?php echo $slider->title ?></h2>
                         <?php echo $slider->description ?>
                     </div>
 
@@ -139,7 +139,7 @@ class work {
 
                         <div class="col-lg-7">
                             <div class="card-body">
-                                <h1 class="card-title"><?php echo $data->name ?></h1>
+                                <h2 class="card-title"><?php echo $data->name ?></h2>
 
                                 <p class="card-text"><?php echo $data->short_description ?></p>
                                 <?php echo $data->long_description ?>
@@ -188,7 +188,7 @@ class work {
 
                         <div class="col-lg-7">
                             <div class="card-body">
-                                <h1 class="card-title"><?php echo $data->name ?></h1>
+                                <h2 class="card-title"><?php echo $data->name ?></h2>
 
                                 <p class="card-text"><?php echo $data->short_description ?></p>
                                 <?php echo $data->long_description ?>

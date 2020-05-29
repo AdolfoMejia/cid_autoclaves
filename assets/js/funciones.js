@@ -1,6 +1,16 @@
 $(document).ready(function(){
     $( $('.carousel-item')[0] ).addClass('active');
 
+    $(document).scroll(function() {
+        if ($(this).scrollTop() > 1) {
+            $('#logo').addClass('logo_small');
+        }
+
+        if ($(this).scrollTop() == 0) {
+            $('#logo').removeClass('logo_small');
+        }
+      });
+
     //movimiento del menu
     $('a.smooth').click(function(e){
         e.preventDefault();
