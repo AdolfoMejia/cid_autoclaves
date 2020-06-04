@@ -1,4 +1,3 @@
-
 <?php
 class conexion {
     public static function con(){
@@ -77,7 +76,7 @@ class work {
                 class="btn btn-outline-primary modal-open"
                 data-name="<?php echo $service->name ?>"
                 data-type="services"
-                data-modal-type="modal">
+                data-modal-type="modalServices">
                 Ver detalles »
             </button>
         </div>
@@ -115,13 +114,6 @@ class work {
         $statement = conexion::con()->query("SELECT * FROM $type WHERE name = '$name'");
         $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
     ?>
-
-        <script>
-            $('button.close, button.btn-close-modal').click(function(){
-                $('body').removeClass('overflow');
-                $("#modal").fadeOut("fast");
-            });
-        </script>
         
         <div class="container">
 
@@ -162,17 +154,96 @@ class work {
     <?php
     }
 
-    public function modalAll($type){
+    public function modalServices($name, $type){
+        $statement = conexion::con()->query("SELECT * FROM $type WHERE name = '$name'");
+        $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
+    ?>
+
+        <div class="container">
+
+            <?php
+            foreach ($data_bd as $data) {
+            ?>
+            
+                <div class="card mb-3">
+                    <div class="row">
+                        <button type="button" class="close"><img src="./assets/img/close.png" alt="close"></button>
+
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="col image-card m-3">
+                                    <img src="./assets/img/<?php echo $type ?>/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                                </div>
+
+                                <h2 class="card-title"><?php echo $data->name ?></h2>
+
+                                <p class="card-text"><?php echo $data->short_description ?></p>
+                                <?php echo $data->long_description ?>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary btn-close-modal mx-auto">
+                                    Volver al sitio »
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php 
+            }
+            ?>
+
+        </div>
+    <?php
+    }
+
+    public function modalServicesAll($type){
         $statement = conexion::con()->query("SELECT * FROM $type");
         $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
     ?>
 
-        <script>
-            $('button.close, button.btn-close-modal').click(function(){
-                $('body').removeClass('overflow');
-                $("#modal").fadeOut("fast");
-            });
-        </script>
+        <div class="container">
+
+            <?php
+            foreach ($data_bd as $data) {
+            ?>
+            
+                <div class="card mb-5">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body">
+                                <div class="col image-card">
+                                    <img src="./assets/img/<?php echo $type ?>/<?php echo $data->image ?>" alt="<?php echo $data->name ?>">
+                                </div>
+
+                                <h2 class="card-title"><?php echo $data->name ?></h2>
+
+                                <p class="card-text"><?php echo $data->short_description ?></p>
+                                <?php echo $data->long_description ?>
+
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary btn-close-modal mx-auto">
+                                    Volver al sitio »
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php 
+            }
+            ?>
+
+        </div>
+    <?php
+    }
+
+    public function modalAll($type){
+        $statement = conexion::con()->query("SELECT * FROM $type");
+        $data_bd = $statement->fetchAll(PDO::FETCH_OBJ);
+    ?>
         
         <div class="container">
 
@@ -209,6 +280,99 @@ class work {
 
         </div>
     <?php
+    }
+
+    public function contactEmail($name, $email, $phone, $message){
+                // multiple recipients (note the commas)
+        $to = "itic_adolfo_mejia@hotmail.com";
+
+        // subject
+        $subject = "Contacto - AutoclavesCID";
+
+        # Indicamos la dirección (nombre) del servidor
+		$server_name = "autoclavescid.com";
+
+        // compose message
+        $message = "
+        <html>
+            <body>
+                <h1>Estos son los datos del contacto</h1>
+                <p>Nombre: $name</p>
+                <p>Nombre: $email</p>
+                <p>Nombre: $phone</p>
+                <p>Nombre: $message</p>
+            </body>
+        </html>
+        ";
+
+        $header = "MIME-Version: 1.0\r\n";
+		$header .= "Content-Type: text/html; charset=utf-8\r\n";
+		$header .="From: contacto@$server_name\nReply-To:
+		contacto@$server_name\nX-Mailer: PHP/";
+
+        // send email
+        if(mail($to, $subject, $message, $header)){
+        ?>
+
+        <div class="container" id="modalEmail">
+            <div class="card mb-3">
+                <div class="row">
+                    <button type="button" class="close"><img src="./assets/img/close.png" alt="close"></button>
+
+                    <div class="col">
+                        <div class="card-body">
+                            <div class="col image-card-email m-3">
+                                <img src="./assets/img/ok.png" alt="successful">
+                            </div>
+
+                            <h2>Gracias por contactarnos!</h2>
+                            <p class="lead">Revisaremos tu mensaje lo mas pronto posible y nos pondremos en contacto contigo.</p>
+                            <p class="lead">Si tu problema no puede esperar puedes llamarnos al <strong>55-34-28-84-85</strong></p>
+                            <p class="lead">Gracias.</p>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary btn-close-modal mx-auto">
+                                Volver al sitio »
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+		}else{
+        ?>
+
+        <div class="container" id="modalEmail">
+            <div class="card mb-3">
+                <div class="row">
+                    <button type="button" class="close"><img src="./assets/img/close.png" alt="close"></button>
+
+                    <div class="col">
+                        <div class="card-body">
+                        <div class="col image-card-email m-3">
+                                <img src="./assets/img/ok.png" alt="successful">
+                            </div>
+
+                            <h2>UPS! Tuvimos un error!</h2>
+                            <p class="lead">Por favor intena de nuevo o llamanos al <strong>55-34-28-84-85</strong></p>
+                            <p class="lead">Gracias.</p>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-primary btn-close-modal mx-auto">
+                                Volver al sitio »
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php
+		}
     }
 }
 ?>

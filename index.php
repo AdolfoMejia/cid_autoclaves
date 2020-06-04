@@ -1,3 +1,10 @@
+<script>
+    $('button.close, button.btn-close-modal').click(function(){
+        $('body').removeClass('overflow');
+        $("#modal").fadeOut("fast");
+    });
+</script>
+
 <?php 
 require_once('./assets/class/class.php');
 
@@ -8,10 +15,31 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal')
     exit;
 }else{}
 
+if (isset($_POST["action"]) and $_POST["action"] == 'modalServices')
+{
+    $t = new work();
+    $t -> modalServices($_POST["name"], $_POST["type"]);
+    exit;
+}else{}
+
+if (isset($_POST["action"]) and $_POST["action"] == 'modalServicesAll')
+{
+    $t = new work();
+    $t -> modalServicesAll($_POST["type"]);
+    exit;
+}else{}
+
 if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
 {
     $t = new work();
     $t -> modalAll($_POST["type"]);
+    exit;
+}else{}
+
+if (isset($_POST["action"]) and $_POST["action"] == 'contactEmail')
+{
+    $t = new work();
+    $t -> contactEmail($_POST["name"], $_POST["email"], $_POST["phone"], $_POST["message"]);
     exit;
 }else{}
 ?>
@@ -44,7 +72,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
     <!-- Banner contact -->
     <div class="fixed-top text-center contact-banner">
         <div class="container">
-            <p>Contactanos al numero <strong>(123) 4567- 890</strong></p>
+            <p>Contactanos al numero <strong>55-34-28-84-85</strong></p>
         </div>
     </div>
 
@@ -144,7 +172,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
             <h1 class="title-section mx-auto">Servicios</h1>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center">
             <?php 
                 $a = new work();
                 $a->services();
@@ -156,7 +184,7 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
                 type="button"
                 class="btn btn-primary btn-lg mx-auto modal-open"
                 data-type="services"
-                data-modal-type="modal-all">
+                data-modal-type="modalServicesAll">
                 Ver mas servicios...
             </button>
         </div>
@@ -170,30 +198,32 @@ if (isset($_POST["action"]) and $_POST["action"] == 'modal-all')
             </div>
     
             <div class="col-md-6 p-0">
-                <form action="#">
+                <form id="contact" method="post">
                     <h2>Ponte en contacto.</h2>
                     <div class="form-group">
                         <label for="Name">Nombre: *</label>
-                        <input type="text" class="form-control" requied="">
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail: *</label>
-                        <input type="email" class="form-control" requied="">
+                        <input type="email" class="form-control" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="number">Numero de Telefono:</label>
-                        <input type="text" class="form-control" requied="">
+                        <input type="text" class="form-control" name="phone">
                     </div>
                     <div class="form-group">
                         <label for="Message">Mensaje: *</label>
-                        <textarea class="form-control" rows="5" requied=""></textarea>
+                        <textarea class="form-control" rows="5" name="message" required></textarea>
                     </div>
 
                     <div class="form-group">
                         <p>* Campos requeridos</p>
                     </div>
+
+                    <input type="hidden" name="action" value="contactEmail">
     
-                    <button type="submit" class="btn btn-primary mt-3">Enviar mensaje</button>
+                    <input type="submit" class="btn btn-primary mt-3" value="Enviar Mensaje"/>
                 </form>
             </div>
         </div>

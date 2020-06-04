@@ -40,4 +40,24 @@ $(document).ready(function(){
         $('body').addClass('overflow');
         $('#modal').fadeIn("fast").html(datos);
     }
+
+    $('#contact').submit(function(e){
+        e.preventDefault();
+        var formData = new FormData(this);
+		$.ajax({
+            type: "POST",
+			url: 'index.php',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData:false,
+			success: ajaxResponseEmail,
+        });
+		return false;
+    });
+
+    function ajaxResponseEmail(datos){
+        $('body').addClass('overflow');
+        $('#modal').fadeIn("fast").html(datos);
+    }
 });
